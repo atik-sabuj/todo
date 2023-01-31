@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:todo/result_page.dart';
 
 class HomePage extends StatefulWidget {
+  static const String routeName = '/home_page';
   const HomePage({Key? key}) : super(key: key);
 
   @override
@@ -38,7 +40,12 @@ class _HomePageState extends State<HomePage> {
           appBar: AppBar(
             title: const Text('Add ToDo'),
             actions: [
-              IconButton(onPressed: _saveTodo, icon: const Icon(Icons.save))
+              IconButton(
+              onPressed: () async {
+                Navigator.pushReplacementNamed(context, ResultPage.routeName);
+                },
+               icon: const Icon(Icons.save),
+              ),
             ],
           ),
           body: ListView(
