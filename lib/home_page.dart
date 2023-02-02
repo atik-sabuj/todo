@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo/model/model.dart';
 import 'package:todo/result_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -13,8 +14,17 @@ class _HomePageState extends State<HomePage> {
   final _titleController = TextEditingController();
   final _descriptionController = TextEditingController();
   final DateTime _dateTime = DateTime.now();
+/*  List<Data> todoList = [];
 
 
+  pushList(){
+    TodoModel(data: todoList);
+  }
+
+
+  addTodo(Data data){
+    todoList.add(data);
+  }*/
   String dropdownvalue = 'Completed';
   var items = [
     'Completed',
@@ -42,7 +52,7 @@ class _HomePageState extends State<HomePage> {
             actions: [
               IconButton(
               onPressed: () async {
-                Navigator.pushReplacementNamed(context, ResultPage.routeName);
+                Navigator.pushReplacementNamed(context, ResultPage.routeName,);
                 },
                icon: const Icon(Icons.save),
               ),
